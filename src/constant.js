@@ -1,0 +1,1 @@
+export const DB_NAME="database_name_youtube"
