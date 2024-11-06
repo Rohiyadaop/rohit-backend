@@ -13,8 +13,20 @@ second aproched
 */ 
 
 connectDB()
-
-
+// after connected your db listen the app 
+.then(()=>{
+    app.listen(process.env.PORT || 8000,()=>{
+        console.log(`server is running at the port : ${process.env.PORT}`);
+        
+    })
+    app.on("error",(error)=>{  // if app not listen at the port then 
+        console.log('its showing the error : ',error);
+        throw error
+    })
+})
+.catch((error)=>{
+    console.log(":this is connection errro : ",error); 
+})
 
 
 
